@@ -2,6 +2,8 @@
 title made by @NK203 !!!
 echo "===================== From NK203 with love <3 =====================
 echo .
+taskkill /F /IM git.exe
+del \.git\index.lock
 echo .
 echo push code hay pull code ?
 set /p pullorpush= push nhap 1 - pull nhap 2 :

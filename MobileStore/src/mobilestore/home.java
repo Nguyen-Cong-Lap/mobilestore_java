@@ -1,10 +1,44 @@
 package mobilestore;
 
 import javax.swing.JOptionPane;
-
+import javax.swing.table.DefaultTableModel;
+import java.sql.*;
+import java.util.*;
 public class home extends javax.swing.JFrame {
+    
+    DefaultTableModel tbn=new DefaultTableModel();
     public home() {
         initComponents();
+        getData();
+    }
+    public void getData(){
+        try{
+            Connect a = new Connect();
+            Connection conn= a.getConnection();
+            int number;
+            Vector row,column;
+            column = new Vector();
+            Statement st = conn.createStatement();
+            ResultSet rs= st.executeQuery("select * from NhanVien");
+            ResultSetMetaData metadata = rs.getMetaData();
+            number= metadata.getColumnCount(); 
+            
+            for(int i =1;i<=number;i++){
+                column.add(metadata.getColumnName(i));
+            }
+            tbn.setColumnIdentifiers(column);
+            while(rs.next()){
+                row = new Vector();
+                for(int i=1;i<=number;i++){
+                    row.addElement(rs.getString(i));
+                }
+                tbn.addRow(row);
+                dgvnhanvien.setModel(tbn);
+            }
+        }
+        catch(Exception ex){
+            System.out.println(ex.toString());
+        }
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -29,7 +63,7 @@ public class home extends javax.swing.JFrame {
         jTextField6 = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        dgvnhanvien = new javax.swing.JTable();
         jTextField3 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -202,21 +236,15 @@ public class home extends javax.swing.JFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nam", "Nữ" }));
         jComboBox1.setName("txtgioitinh"); // NOI18N
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        dgvnhanvien.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Mã Nhân Viên", "Tên Nhân Viên", "Ngày Sinh", "Giới Tính", "Số Điện Thoại", "Quê Quán"
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(2).setHeaderValue("Ngày Sinh");
-            jTable1.getColumnModel().getColumn(3).setHeaderValue("Giới Tính");
-            jTable1.getColumnModel().getColumn(4).setHeaderValue("Số Điện Thoại");
-            jTable1.getColumnModel().getColumn(5).setHeaderValue("Quê Quán");
-        }
+        jScrollPane1.setViewportView(dgvnhanvien);
 
         jTextField3.setName("txttimkiem"); // NOI18N
 
@@ -534,7 +562,7 @@ public class home extends javax.swing.JFrame {
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane2)
                             .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(116, 116, 116)
                                 .addComponent(jButton9)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton10)
@@ -542,7 +570,7 @@ public class home extends javax.swing.JFrame {
                                 .addComponent(jButton11)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton12)
-                                .addGap(164, 164, 164)))))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
@@ -739,7 +767,7 @@ public class home extends javax.swing.JFrame {
                 .addComponent(jButton18)
                 .addGap(18, 18, 18)
                 .addComponent(jButton19)
-                .addGap(170, 170, 170))
+                .addGap(177, 177, 177))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1182,6 +1210,7 @@ public class home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable dgvnhanvien;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -1248,15 +1277,12 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
-    private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
@@ -1266,7 +1292,6 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;

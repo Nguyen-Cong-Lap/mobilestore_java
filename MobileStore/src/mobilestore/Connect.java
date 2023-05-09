@@ -5,7 +5,7 @@ public class Connect {
         Connection conn= null;
         try{
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            conn= DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=MobileStore","sa","sa");
+            conn= DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=MobileStore;encrypt=true;trustServerCertificate=true","sa","sa");
             if(conn!=null){
                 System.out.println("ketnoi thanh cong");
             }

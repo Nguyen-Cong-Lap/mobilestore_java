@@ -2,7 +2,10 @@ package mobilestore;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class DangNhap extends javax.swing.JFrame {
@@ -179,9 +182,9 @@ public class DangNhap extends javax.swing.JFrame {
     }//GEN-LAST:event_btndangnhapActionPerformed
 
     private void btndangkyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndangkyActionPerformed
-        this.hide();
-        DangKy dk=new DangKy();
-        dk.show();
+                this.hide();
+                DangKy dk=new DangKy();
+                dk.show();
     }//GEN-LAST:event_btndangkyActionPerformed
 
     public static void main(String args[]) {

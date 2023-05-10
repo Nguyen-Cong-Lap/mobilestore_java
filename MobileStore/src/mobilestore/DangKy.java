@@ -133,6 +133,7 @@ public class DangKy extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void btndangkyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndangkyActionPerformed
         try{
             if(txttaikhoandk.getText().equals("")||txtmatkhaudn.getText().equals("")){

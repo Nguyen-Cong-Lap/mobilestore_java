@@ -3,6 +3,7 @@ package mobilestore;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.sql.*;
+import java.text.DecimalFormat;
 import java.util.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -269,6 +270,9 @@ public class home extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         txtthongke = new javax.swing.JTextField();
         btnthongke = new javax.swing.JButton();
+        lbsoluongmay = new javax.swing.JLabel();
+        lbdoanhso = new javax.swing.JLabel();
+        lblai = new javax.swing.JLabel();
         jPanel14 = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
         jTextField22 = new javax.swing.JTextField();
@@ -1085,29 +1089,51 @@ public class home extends javax.swing.JFrame {
             }
         });
 
+        lbsoluongmay.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbsoluongmay.setText("Số máy bán ra :");
+        lbsoluongmay.setPreferredSize(new java.awt.Dimension(96, 30));
+
+        lbdoanhso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbdoanhso.setText("Doanh Số :");
+        lbdoanhso.setPreferredSize(new java.awt.Dimension(96, 30));
+
+        lblai.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblai.setText("Lãi :");
+        lblai.setPreferredSize(new java.awt.Dimension(96, 30));
+
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jButton22)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnthongke)
-                        .addGap(66, 66, 66))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(lbdoanhso, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lbsoluongmay, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblai, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(9, 9, 9))
                     .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtthongke, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(cbthongke, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)))
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                                .addGap(22, 22, 22)
+                                .addComponent(jButton22)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnthongke)
+                                .addGap(66, 66, 66))
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addGap(48, 48, 48)
+                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtthongke, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel13Layout.createSequentialGroup()
+                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(cbthongke, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(9, Short.MAX_VALUE))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1125,7 +1151,12 @@ public class home extends javax.swing.JFrame {
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnthongke, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbdoanhso, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbsoluongmay, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblai, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
@@ -1500,83 +1531,31 @@ public class home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnxoanvActionPerformed
     
-    private void btnthongkeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnthongkeActionPerformed
-        try {
-            if(cbthongke.getSelectedItem()=="Theo Tháng"){
-                DefaultTableModel tbn=new DefaultTableModel();
-                int number;
-                Vector row,column;
-                column = new Vector();
-                Statement st = conn.createStatement();
-                ResultSet rs= st.executeQuery("select * from HoaDon1 where month(ngayxuat)='"+txtthongke.getText()+"'");
-                ResultSetMetaData metadata = rs.getMetaData();
-                number= metadata.getColumnCount(); 
-
-                for(int i =1;i<=number;i++){
-                    column.add(metadata.getColumnName(i));
-                }
-                tbn.setColumnIdentifiers(column);
-                while(rs.next()){
-                    row = new Vector();
-                    for(int i=1;i<=number;i++){
-                        row.addElement(rs.getString(i));
-                    }
-                    tbn.addRow(row);
-                    dgvthongke.setModel(tbn);
-                }
-            }
-            if(cbthongke.getSelectedItem()=="Theo Năm"){
-                DefaultTableModel tbn=new DefaultTableModel();
-                int number;
-                Vector row,column;
-                column = new Vector();
-                Statement st = conn.createStatement();
-                ResultSet rs= st.executeQuery("select * from HoaDon1 where year(ngayxuat)='"+txtthongke.getText()+"'");
-                ResultSetMetaData metadata = rs.getMetaData();
-                number= metadata.getColumnCount(); 
-
-                for(int i =1;i<=number;i++){
-                    column.add(metadata.getColumnName(i));
-                }
-                tbn.setColumnIdentifiers(column);
-                while(rs.next()){
-                    row = new Vector();
-                    for(int i=1;i<=number;i++){
-                        row.addElement(rs.getString(i));
-                    }
-                    tbn.addRow(row);
-                    dgvthongke.setModel(tbn);
-                }
-            }
-        if(cbthongke.getSelectedItem()=="Theo Sản Phẩm"){
-            DefaultTableModel tbn=new DefaultTableModel();
-            int number;
-            Vector row,column;
-            column = new Vector();
-            Statement st = conn.createStatement();
-            ResultSet rs= st.executeQuery("select * from HoaDon1 where masp='"+txtthongke.getText()+"'");
-            ResultSetMetaData metadata = rs.getMetaData();
-            number= metadata.getColumnCount(); 
-            
-            for(int i =1;i<=number;i++){
-                column.add(metadata.getColumnName(i));
-            }
-            tbn.setColumnIdentifiers(column);
-            while(rs.next()){
-                row = new Vector();
-                for(int i=1;i<=number;i++){
-                    row.addElement(rs.getString(i));
-                }
-                tbn.addRow(row);
-                dgvthongke.setModel(tbn);
-            }
+    public void TongDoanhThu(){
+        DecimalFormat x= new DecimalFormat("###,###,###");
+        int tongdt=0;
+        for(int i=0;i<dgvthongke.getRowCount();i++){
+            tongdt+=Float.parseFloat(dgvthongke.getValueAt(i, 5).toString());
         }
+        lbdoanhso.setText("Tổng Doanh Số: "+x.format(tongdt)+" VND");
+    }
+    
+    public void TongSoMay(){
+        int tongsomay=0;
+        for(int i=0;i<dgvthongke.getRowCount();i++){
+            tongsomay+=Integer.parseInt(dgvthongke.getValueAt(i, 3).toString());
         }
-        catch(Exception  ex){
-            System.out.println(ex.toString());
+        lbsoluongmay.setText("Số máy bán ra: "+tongsomay+" Máy");
+    }
+    
+    public void TongLoiNhuan(){
+        DecimalFormat x= new DecimalFormat("###,###,###");
+        int tongln=0;
+        for(int i=0;i<dgvthongke.getRowCount();i++){
+            tongln+=Float.parseFloat(dgvthongke.getValueAt(i, 6).toString());
         }
-    }//GEN-LAST:event_btnthongkeActionPerformed
-
+        lblai.setText("Lợi Nhuận: "+x.format(tongln)+" VND");
+    }
     private void btnthemspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnthemspActionPerformed
         try{
             if(txtmasp.getText().equals("")||txttensp.getText().equals("")||txtngaysx.getText().equals("")||cbbaohanh.getSelectedItem().equals("")||txtnhasx.getText().equals("")||txtgiaban.getText().equals("")){
@@ -2020,6 +1999,86 @@ public class home extends javax.swing.JFrame {
             System.out.println(ex.toString());
         }
     }//GEN-LAST:event_btncapnhatTKActionPerformed
+
+    private void btnthongkeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnthongkeActionPerformed
+        try {
+            if(cbthongke.getSelectedItem()=="Theo Tháng"){
+                DefaultTableModel tbn=new DefaultTableModel();
+                int number;
+                Vector row,column;
+                column = new Vector();
+                Statement st = conn.createStatement();
+                ResultSet rs= st.executeQuery("select  HoaDon1.*,HoaDon1.soluong*HoaDon1.dongia as TongThanhToan,(HoaDon1.soluong*HoaDon1.dongia)-(HoaDon1.soluong*Kho.dongia) as TienLai from HoaDon1,Kho where Kho.masp=HoaDon1.masp and month(ngayxuat)='"+txtthongke.getText()+"'");
+                ResultSetMetaData metadata = rs.getMetaData();
+                number= metadata.getColumnCount();
+
+                for(int i =1;i<=number;i++){
+                    column.add(metadata.getColumnName(i));
+                }
+                tbn.setColumnIdentifiers(column);
+                while(rs.next()){
+                    row = new Vector();
+                    for(int i=1;i<=number;i++){
+                        row.addElement(rs.getString(i));
+                    }
+                    tbn.addRow(row);
+                    dgvthongke.setModel(tbn);
+                }
+            }
+            if(cbthongke.getSelectedItem()=="Theo Năm"){
+                DefaultTableModel tbn=new DefaultTableModel();
+                int number;
+                Vector row,column;
+                column = new Vector();
+                Statement st = conn.createStatement();
+                ResultSet rs= st.executeQuery("select  HoaDon1.*,HoaDon1.soluong*HoaDon1.dongia as TongThanhToan,(HoaDon1.soluong*HoaDon1.dongia)-(HoaDon1.soluong*Kho.dongia) as TienLai from HoaDon1,Kho where Kho.masp=HoaDon1.masp and year(ngayxuat)='"+txtthongke.getText()+"'");
+                ResultSetMetaData metadata = rs.getMetaData();
+                number= metadata.getColumnCount();
+
+                for(int i =1;i<=number;i++){
+                    column.add(metadata.getColumnName(i));
+                }
+                tbn.setColumnIdentifiers(column);
+                while(rs.next()){
+                    row = new Vector();
+                    for(int i=1;i<=number;i++){
+                        row.addElement(rs.getString(i));
+                    }
+                    tbn.addRow(row);
+                    dgvthongke.setModel(tbn);
+                }
+            }
+            if(cbthongke.getSelectedItem()=="Theo Sản Phẩm"){
+                DefaultTableModel tbn=new DefaultTableModel();
+                int number;
+                Vector row,column;
+                column = new Vector();
+                Statement st = conn.createStatement();
+                ResultSet rs= st.executeQuery("select  HoaDon1.*,HoaDon1.soluong*HoaDon1.dongia as TongThanhToan,(HoaDon1.soluong*HoaDon1.dongia)-(HoaDon1.soluong*Kho.dongia) as TienLai from HoaDon1,Kho where Kho.masp=HoaDon1.masp and HoaDon1.masp='"+txtthongke.getText()+"'");
+                ResultSetMetaData metadata = rs.getMetaData();
+                number= metadata.getColumnCount();
+
+                for(int i =1;i<=number;i++){
+                    column.add(metadata.getColumnName(i));
+                }
+                tbn.setColumnIdentifiers(column);
+                while(rs.next()){
+                    row = new Vector();
+                    for(int i=1;i<=number;i++){
+                        row.addElement(rs.getString(i));
+                    }
+                    tbn.addRow(row);
+                    dgvthongke.setModel(tbn);
+                }
+            }
+            TongDoanhThu();
+            TongSoMay();
+            TongLoiNhuan();
+        }
+        catch(Exception  ex){
+            System.out.println(ex.toString());
+        }
+    }//GEN-LAST:event_btnthongkeActionPerformed
     
     
     
@@ -2123,6 +2182,9 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField22;
     private javax.swing.JTextField jTextField23;
     private javax.swing.JTextField jTextField24;
+    private javax.swing.JLabel lbdoanhso;
+    private javax.swing.JLabel lblai;
+    private javax.swing.JLabel lbsoluongmay;
     private javax.swing.JTextField txtdongia;
     private javax.swing.JTextField txtgiaban;
     private javax.swing.JComboBox<String> txtgioitinh;

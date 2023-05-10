@@ -50,6 +50,7 @@ public class home extends javax.swing.JFrame {
                         txtsdt.setText(dgvnhanvien.getValueAt(dgvnhanvien.getSelectedRow(), 4)+"");
                         txtquequan.setText(dgvnhanvien.getValueAt(dgvnhanvien.getSelectedRow(), 5)+"");
                         txtluongcoban.setText(dgvnhanvien.getValueAt(dgvnhanvien.getSelectedRow(), 6)+"");
+                        txtmanv.setEnabled(false);
                     }
                 }
             });
@@ -91,6 +92,7 @@ public class home extends javax.swing.JFrame {
                         cbbaohanh.setSelectedItem(dgvsp.getModel().getValueAt(dgvsp.getSelectedRow(), 3)+"");
                         txtnhasx.setText(dgvsp.getValueAt(dgvsp.getSelectedRow(), 4)+"");
                         txtgiaban.setText(dgvsp.getValueAt(dgvsp.getSelectedRow(), 5)+"");
+                        txtmasp.setEnabled(false);
                     }
                 }
             });
@@ -130,6 +132,7 @@ public class home extends javax.swing.JFrame {
                         txtngaynhap.setText(dgvkho.getValueAt(dgvkho.getSelectedRow(), 1)+"");
                         txtsoluong.setText(dgvkho.getValueAt(dgvkho.getSelectedRow(), 2)+"");
                         txtdongia.setText(dgvkho.getValueAt(dgvkho.getSelectedRow(), 3)+"");
+                        txtmasp_kho.setEnabled(false);
                     }
                 }
             });
@@ -166,6 +169,7 @@ public class home extends javax.swing.JFrame {
             System.out.println(ex.toString());
         }
     }
+    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -232,13 +236,13 @@ public class home extends javax.swing.JFrame {
         jPanel9 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
+        btnthemkho = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
-        jButton17 = new javax.swing.JButton();
+        btnxoakho = new javax.swing.JButton();
         txtmasp_kho = new javax.swing.JTextField();
         txtdongia = new javax.swing.JTextField();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
+        btnsuakho = new javax.swing.JButton();
+        btnlammoikho = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         txtngaynhap = new javax.swing.JTextField();
@@ -311,7 +315,7 @@ public class home extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btndangxuat, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btndangxuat, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -332,30 +336,30 @@ public class home extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(153, 255, 204));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setText("Mã Nhân Viên");
+        jLabel2.setText("Mã Nhân Viên :");
 
         txtmanv.setName("txtmanv"); // NOI18N
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel8.setText("Tên Nhân Viên");
+        jLabel8.setText("Tên Nhân Viên :");
 
         txttennv.setName("txttennv"); // NOI18N
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel9.setText("Giới Tính");
+        jLabel9.setText("Giới Tính :");
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel10.setText("Ngày Sinh");
+        jLabel10.setText("Ngày Sinh :");
 
         txtngaysinh.setName("txtngaysinh"); // NOI18N
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel11.setText("Quê Quán");
+        jLabel11.setText("Quê Quán :");
 
         txtquequan.setName("txtquequan"); // NOI18N
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel12.setText("Số Điện Thoại");
+        jLabel12.setText("Số Điện Thoại :");
 
         txtsdt.setName("txtsdt"); // NOI18N
 
@@ -377,6 +381,11 @@ public class home extends javax.swing.JFrame {
         btntimkiem.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btntimkiem.setText("Tìm Kiếm");
         btntimkiem.setName("btnthemanh"); // NOI18N
+        btntimkiem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btntimkiemActionPerformed(evt);
+            }
+        });
 
         btnthemnv.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnthemnv.setText("Thêm TT");
@@ -425,7 +434,7 @@ public class home extends javax.swing.JFrame {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 115, Short.MAX_VALUE)
+            .addGap(0, 120, Short.MAX_VALUE)
         );
 
         btnthemanh.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -437,7 +446,7 @@ public class home extends javax.swing.JFrame {
         btnxoa.setName("btnxoa"); // NOI18N
 
         jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel20.setText("Lương Cơ Bản");
+        jLabel20.setText("Lương Cơ Bản :");
 
         txtluongcoban.setName("txtluong"); // NOI18N
 
@@ -571,20 +580,30 @@ public class home extends javax.swing.JFrame {
         btnxoatksp.setName("btnxoa"); // NOI18N
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel14.setText("Giá Bán");
+        jLabel14.setText("Giá Bán :");
 
         txtgiaban.setName("txtgiaban"); // NOI18N
 
         btnthemsp.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnthemsp.setText("Thêm TT");
         btnthemsp.setName("btnthem"); // NOI18N
+        btnthemsp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnthemspActionPerformed(evt);
+            }
+        });
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel15.setText("Nhà Sản Xuất");
+        jLabel15.setText("Nhà Sản Xuất :");
 
         btnxoasp.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnxoasp.setText("Xóa TT");
         btnxoasp.setName("btnxoa"); // NOI18N
+        btnxoasp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnxoaspActionPerformed(evt);
+            }
+        });
 
         txtmasp.setName("txtmasp"); // NOI18N
 
@@ -593,6 +612,11 @@ public class home extends javax.swing.JFrame {
         btnsuasp.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnsuasp.setText("Sửa TT");
         btnsuasp.setName("btnsua"); // NOI18N
+        btnsuasp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsuaspActionPerformed(evt);
+            }
+        });
 
         cbbaohanh.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "12 tháng", "24 tháng" }));
         cbbaohanh.setName("txtbaohanh"); // NOI18N
@@ -607,7 +631,7 @@ public class home extends javax.swing.JFrame {
         });
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel16.setText("Tên Sản Phẩm");
+        jLabel16.setText("Tên Sản Phẩm :");
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel17.setText("Hình Ảnh");
@@ -642,10 +666,10 @@ public class home extends javax.swing.JFrame {
         );
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setText("Mã Sản Phẩm");
+        jLabel3.setText("Mã Sản Phẩm  :");
 
         jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel18.setText("Bảo Hành");
+        jLabel18.setText("Bảo Hành :");
 
         jTextField11.setName("txttimkiem"); // NOI18N
 
@@ -658,7 +682,7 @@ public class home extends javax.swing.JFrame {
         btntimkiemsp.setName("btntimkiem"); // NOI18N
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel19.setText("Ngày Sản Xuất");
+        jLabel19.setText("Ngày Sản Xuất :");
 
         txtngaysx.setName("txtngaysx"); // NOI18N
 
@@ -793,31 +817,51 @@ public class home extends javax.swing.JFrame {
         jButton15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton15.setText("Xóa");
 
-        jButton16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton16.setText("Thêm TT");
-        jButton16.setName("btnthem"); // NOI18N
+        btnthemkho.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnthemkho.setText("Thêm TT");
+        btnthemkho.setName("btnthem"); // NOI18N
+        btnthemkho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnthemkhoActionPerformed(evt);
+            }
+        });
 
         jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel21.setText("Đơn Giá");
+        jLabel21.setText("Đơn Giá :");
 
-        jButton17.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton17.setText("Xóa TT");
-        jButton17.setName("btnxoa"); // NOI18N
+        btnxoakho.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnxoakho.setText("Xóa TT");
+        btnxoakho.setName("btnxoa"); // NOI18N
+        btnxoakho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnxoakhoActionPerformed(evt);
+            }
+        });
 
         txtmasp_kho.setName("txtmasp"); // NOI18N
 
         txtdongia.setName("txtdongia"); // NOI18N
 
-        jButton18.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton18.setText("Sửa TT");
-        jButton18.setName("btnsua"); // NOI18N
+        btnsuakho.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnsuakho.setText("Sửa TT");
+        btnsuakho.setName("btnsua"); // NOI18N
+        btnsuakho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsuakhoActionPerformed(evt);
+            }
+        });
 
-        jButton19.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton19.setText("Làm Mới");
-        jButton19.setName("btnlammoi"); // NOI18N
+        btnlammoikho.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnlammoikho.setText("Làm Mới");
+        btnlammoikho.setName("btnlammoi"); // NOI18N
+        btnlammoikho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnlammoikhoActionPerformed(evt);
+            }
+        });
 
         jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel22.setText("Ngày Nhập");
+        jLabel22.setText("Ngày Nhập :");
 
         jLabel23.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel23.setText("Hình Ảnh");
@@ -850,7 +894,7 @@ public class home extends javax.swing.JFrame {
         );
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel4.setText("Mã Sản Phẩm");
+        jLabel4.setText("Mã Sản Phẩm :");
 
         jTextField17.setName("txttimkiem"); // NOI18N
 
@@ -862,7 +906,7 @@ public class home extends javax.swing.JFrame {
         jButton21.setText("Tìm Kiếm");
 
         jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel25.setText("Số Lượng");
+        jLabel25.setText("Số Lượng :");
 
         txtsoluong.setName("txtsoluong"); // NOI18N
 
@@ -911,13 +955,13 @@ public class home extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton16)
+                .addComponent(btnthemkho)
                 .addGap(18, 18, 18)
-                .addComponent(jButton17)
+                .addComponent(btnxoakho)
                 .addGap(18, 18, 18)
-                .addComponent(jButton18)
+                .addComponent(btnsuakho)
                 .addGap(18, 18, 18)
-                .addComponent(jButton19)
+                .addComponent(btnlammoikho)
                 .addGap(177, 177, 177))
         );
         jPanel10Layout.setVerticalGroup(
@@ -959,10 +1003,10 @@ public class home extends javax.swing.JFrame {
                             .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton16, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                    .addComponent(jButton17, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                    .addComponent(jButton18, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                    .addComponent(jButton19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnthemkho, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                    .addComponent(btnxoakho, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                    .addComponent(btnsuakho, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                    .addComponent(btnlammoikho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -1313,6 +1357,44 @@ public class home extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField23ActionPerformed
 
+    private void btnthemnvActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        try{
+            if(txtmanv.getText().equals("")||txttennv.getText().equals("")||txtngaysinh.getText().equals("")||txtgioitinh.getSelectedItem().equals("")||txtsdt.getText().equals("")||txtquequan.getText().equals("")||txtluongcoban.getText().equals("")){
+                JOptionPane.showMessageDialog(this, "Ban can nhap du cac truong !!");
+            }
+            else{
+                StringBuffer sb=new StringBuffer();
+                String sql_check ="select*from NhanVien where manv='"+txtmanv.getText()+"'";
+                Statement st=conn.createStatement();
+                ResultSet rs=st.executeQuery(sql_check);
+                if(rs.next()){
+                    sb.append("Nhan Vien nay da ton tai");
+                }if(sb.length()>0){
+                    JOptionPane.showMessageDialog(this,sb.toString());
+                }else{
+                    String sql="insert into NhanVien values('"+txtmanv.getText()+
+                        "','"+txttennv.getText()+
+                        "','"+txtngaysinh.getText()+
+                        "','"+txtgioitinh.getSelectedItem()+
+                        "','"+txtsdt.getText()+
+                        "','"+txtquequan.getText()+
+                        "','"+txtluongcoban.getText()+"')";
+                    st=conn.createStatement();
+                    int kq=st.executeUpdate(sql);
+                    if(kq>0){
+                        JOptionPane.showMessageDialog(this,"them thanh cong");
+                        btnlammoinv.doClick();
+                    }else{
+                        JOptionPane.showMessageDialog(this,"that bai");
+                    }
+                }
+            }
+        }catch(Exception  ex){
+            System.out.println(ex.toString());
+        }
+    }                                         
+
+
     private void btnlammoinvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlammoinvActionPerformed
         txtmanv.setText(null);
         txttennv.setText(null);
@@ -1322,78 +1404,37 @@ public class home extends javax.swing.JFrame {
         txtquequan.setText(null);
         txtluongcoban.setText(null);
         getData_NhanVien();
+        txtmanv.setEnabled(true);
     }//GEN-LAST:event_btnlammoinvActionPerformed
 
-    private void btnsuanvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsuanvActionPerformed
-        try{
-            if(txtmanv.getText().equals("")||txttennv.getText().equals("")||txtngaysinh.getText().equals("")||txtgioitinh.getSelectedItem().equals("")||txtsdt.getText().equals("")||txtquequan.getText().equals("")||txtluongcoban.getText().equals("")){
-                JOptionPane.showMessageDialog(this, "Ban can nhap du cac truong !!");
-            }
-            else{
-            DefaultTableModel tbn=new DefaultTableModel();
-            PreparedStatement ps=conn.prepareStatement("update NhanVien set tennv=?, ngaysinh=?, gioitinh=?, sodt=?, quequan=?, luongcoban=? where manv=? ");
-            ps.setString(7, txtmanv.getText());
-            ps.setString(1, txttennv.getText());
-            ps.setString(2, txtngaysinh.getText());
-            ps.setString(3, txtgioitinh.getSelectedItem().toString());
-            ps.setString(4, txtsdt.getText());
-            ps.setString(5, txtquequan.getText());
-            ps.setString(6, txtluongcoban.getText());
-            int chk=ps.executeUpdate();
-            if(chk>0){
-                JOptionPane.showMessageDialog(this, "sua thanh cong");
-                tbn.setRowCount(0);
-                btnlammoinv.doClick();
-            }
-            }
-        }catch(Exception  ex){
-            System.out.println(ex.toString());
-        }
-    }//GEN-LAST:event_btnsuanvActionPerformed
+    
 
     private void btnxoanvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnxoanvActionPerformed
         try{
-            DefaultTableModel tbn=new DefaultTableModel();
-            PreparedStatement ps=conn.prepareStatement("delete from NhanVien where manv=?");
-            ps.setString(1, txtmanv.getText());
-            int chk=ps.executeUpdate();
-            if(chk>0){
-                JOptionPane.showMessageDialog(this, "xoa thanh cong");
-                tbn.setRowCount(0);
-                btnlammoinv.doClick();
+            if(txtmanv.getText().equals("")){
+                JOptionPane.showMessageDialog(this, "Ban can nhap du cac truong !!");
+            }else{
+                StringBuffer sb=new StringBuffer();
+                Statement st=conn.createStatement();
+                if(sb.length()>0){
+                    JOptionPane.showMessageDialog(this,sb.toString());
+                }else{
+                    String sql="delete NhanVien where manv='"+txtmanv.getText()+"'";
+                    st=conn.createStatement();
+                    int kq=st.executeUpdate(sql);
+                    if(kq>0){
+                        JOptionPane.showMessageDialog(this,"xoa thanh cong");
+                        btnlammoinv.doClick();
+                    }else{
+                        JOptionPane.showMessageDialog(this,"that bai");
+                    }
+                }
             }
         }catch(Exception  ex){
             System.out.println(ex.toString());
         }
     }//GEN-LAST:event_btnxoanvActionPerformed
-
-    private void btnthemnvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnthemnvActionPerformed
-        try{
-            if(txtmanv.getText().equals("")||txttennv.getText().equals("")||txtngaysinh.getText().equals("")||txtgioitinh.getSelectedItem().equals("")||txtsdt.getText().equals("")||txtquequan.getText().equals("")||txtluongcoban.getText().equals("")){
-                JOptionPane.showMessageDialog(this, "Ban can nhap du cac truong !!");
-            }
-            else{
-            DefaultTableModel tbn=new DefaultTableModel();
-            PreparedStatement ps=conn.prepareStatement("insert into NhanVien values(?,?,?,?,?,?,?)");
-            ps.setString(1, txtmanv.getText());
-            ps.setString(2, txttennv.getText());
-            ps.setString(3, txtngaysinh.getText());
-            ps.setString(4, txtgioitinh.getSelectedItem().toString());
-            ps.setString(5, txtsdt.getText());
-            ps.setString(6, txtquequan.getText());
-            ps.setString(7, txtluongcoban.getText());
-            int chk=ps.executeUpdate();
-            if(chk>0){
-                JOptionPane.showMessageDialog(this, "them thanh cong");
-                tbn.setRowCount(0);
-                btnlammoinv.doClick();
-            }
-            }
-        }catch(Exception  ex){
-            System.out.println(ex.toString());
-        }
-    }//GEN-LAST:event_btnthemnvActionPerformed
-
+    
     private void btnthongkeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnthongkeActionPerformed
         try {
             if(cbthongke.getSelectedItem()=="Theo Tháng"){
@@ -1471,38 +1512,253 @@ public class home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnthongkeActionPerformed
 
-    private void btnlammoispActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlammoispActionPerformed
+    private void btnlammoispActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnlammoispActionPerformed
+    }                                           
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
+    private void btnthemspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnthemspActionPerformed
+        try{
+            if(txtmasp.getText().equals("")||txttensp.getText().equals("")||txtngaysx.getText().equals("")||cbbaohanh.getSelectedItem().equals("")||txtnhasx.getText().equals("")||txtgiaban.getText().equals("")){
+                JOptionPane.showMessageDialog(this, "Ban can nhap du cac truong !!");
+            }
+            else{
+                StringBuffer sb=new StringBuffer();
+                String sql_check ="select*from SanPham where masp='"+txtmasp.getText()+"'";
+                Statement st=conn.createStatement();
+                ResultSet rs=st.executeQuery(sql_check);
+                if(rs.next()){
+                    sb.append("SanPham nay da ton tai");
+                }if(sb.length()>0){
+                    JOptionPane.showMessageDialog(this,sb.toString());
+                }else{
+                    String sql="insert into SanPham values('"+txtmasp.getText()+
+                        "','"+txttensp.getText()+
+                        "','"+txtngaysx.getText()+
+                        "','"+cbbaohanh.getSelectedItem()+
+                        "','"+txtnhasx.getText()+
+                        "','"+txtgiaban.getText()+"')";
+                    st=conn.createStatement();
+                    int kq=st.executeUpdate(sql);
+                    if(kq>0){
+                        JOptionPane.showMessageDialog(this,"them thanh cong");
+                        btnlammoisp.doClick();
+                    }else{
+                        JOptionPane.showMessageDialog(this,"that bai");
+                    }
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }catch(Exception  ex){
+            System.out.println(ex.toString());
         }
-        //</editor-fold>
+    }//GEN-LAST:event_btnthemspActionPerformed
 
-        /* Create and display the form */
+    private void btnxoaspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnxoaspActionPerformed
+        try{
+            if(txtmasp.getText().equals("")){
+                JOptionPane.showMessageDialog(this, "Ban can nhap du cac truong !!");
+            }else{
+                StringBuffer sb=new StringBuffer();
+                Statement st=conn.createStatement();
+                if(sb.length()>0){
+                    JOptionPane.showMessageDialog(this,sb.toString());
+                }else{
+                    String sql="delete SanPham where masp='"+txtmasp.getText()+"'";
+                    st=conn.createStatement();
+                    int kq=st.executeUpdate(sql);
+                    if(kq>0){
+                        JOptionPane.showMessageDialog(this,"xoa thanh cong");
+                        btnlammoisp.doClick();
+                    }else{
+                        JOptionPane.showMessageDialog(this,"that bai");
+                    }
+                }
+            }
+        }catch(Exception  ex){
+            System.out.println(ex.toString());
+        }
+    }//GEN-LAST:event_btnxoaspActionPerformed
+
+    private void btnsuaspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsuaspActionPerformed
+        try{
+            if(txtmasp.getText().equals("")||txttensp.getText().equals("")||txtngaysx.getText().equals("")||cbbaohanh.getSelectedItem().equals("")||txtnhasx.getText().equals("")||txtgiaban.getText().equals("")){
+                JOptionPane.showMessageDialog(this, "Ban can nhap du cac truong !!");
+            }else{
+                StringBuffer sb=new StringBuffer();
+                Statement st=conn.createStatement();
+                if(sb.length()>0){
+                    JOptionPane.showMessageDialog(this,sb.toString());
+                }else{
+                    String sql="update SanPham set tensp='"+txttensp.getText()+
+                            "', ngaysx='"+txtngaysx.getText()+
+                            "', baohanh='"+cbbaohanh.getSelectedItem()+
+                            "', nhasx='"+txtnhasx.getText()+
+                            "', giaban='"+txtgiaban.getText()+
+                            "' where masp='"+txtmasp.getText()+"'";
+                    st=conn.createStatement();
+                    int kq=st.executeUpdate(sql);
+                    if(kq>0){
+                        JOptionPane.showMessageDialog(this,"sua thanh cong");
+                        btnlammoisp.doClick();
+                    }else{
+                        JOptionPane.showMessageDialog(this,"that bai");
+                    }
+                }
+            }
+        }catch(Exception  ex){
+            System.out.println(ex.toString());
+        }
+    }//GEN-LAST:event_btnsuaspActionPerformed
+    
+
+    private void btnlammoikhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlammoikhoActionPerformed
+        txtmasp_kho.setText(null);
+        txtngaynhap.setText(null);
+        txtsoluong.setText(null);
+        txtdongia.setText(null);
+        getData_Kho();
+        txtmasp_kho.setEnabled(true);
+    }//GEN-LAST:event_btnlammoikhoActionPerformed
+
+    private void btnthemkhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnthemkhoActionPerformed
+        try{
+            if(txtmasp_kho.getText().equals("")||txtngaynhap.getText().equals("")||txtsoluong.getText().equals("")||txtdongia.getText().equals("")){
+                JOptionPane.showMessageDialog(this, "Ban can nhap du cac truong !!");
+            }
+            else{
+                StringBuffer sb=new StringBuffer();
+                String sql_check ="select*from SanPham where masp='"+txtmasp_kho.getText()+"'";
+                Statement st=conn.createStatement();
+                ResultSet rs=st.executeQuery(sql_check);
+                if(rs.next()){
+                    sb.append("SanPham nay da ton tai");
+                }if(sb.length()>0){
+                    JOptionPane.showMessageDialog(this,sb.toString());
+                }else{
+                    String sql="insert into Kho values('"+txtmasp.getText()+
+                        "','"+txtngaynhap.getText()+
+                        "','"+txtsoluong.getText()+
+                        "','"+txtdongia.getText()+"')";
+                    st=conn.createStatement();
+                    int kq=st.executeUpdate(sql);
+                    if(kq>0){
+                        JOptionPane.showMessageDialog(this,"them thanh cong");
+                        btnlammoikho.doClick();
+                    }else{
+                        JOptionPane.showMessageDialog(this,"that bai");
+                    }
+                }
+            }
+        }catch(Exception  ex){
+            System.out.println(ex.toString());
+        }
+    }//GEN-LAST:event_btnthemkhoActionPerformed
+
+    private void btnxoakhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnxoakhoActionPerformed
+        try{
+            if(txtmasp_kho.getText().equals("")){
+                JOptionPane.showMessageDialog(this, "Ban can nhap du cac truong !!");
+            }else{
+                StringBuffer sb=new StringBuffer();
+                Statement st=conn.createStatement();
+                if(sb.length()>0){
+                    JOptionPane.showMessageDialog(this,sb.toString());
+                }else{
+                    String sql="delete Kho where masp='"+txtmasp_kho.getText()+"'";
+                    st=conn.createStatement();
+                    int kq=st.executeUpdate(sql);
+                    if(kq>0){
+                        JOptionPane.showMessageDialog(this,"xoa thanh cong");
+                        btnlammoikho.doClick();
+                    }else{
+                        JOptionPane.showMessageDialog(this,"that bai");
+                    }
+                }
+            }
+        }catch(Exception  ex){
+            System.out.println(ex.toString());
+        }
+    }//GEN-LAST:event_btnxoakhoActionPerformed
+
+    private void btnsuakhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsuakhoActionPerformed
+        try{
+            if(txtmasp_kho.getText().equals("")||txtngaynhap.getText().equals("")||txtsoluong.getText().equals("")||txtdongia.getText().equals("")){
+                JOptionPane.showMessageDialog(this, "Ban can nhap du cac truong !!");
+            }else{
+                StringBuffer sb=new StringBuffer();
+                Statement st=conn.createStatement();
+                if(sb.length()>0){
+                    JOptionPane.showMessageDialog(this,sb.toString());
+                }else{
+                    String sql="update Kho set ngaynhap='"+txtngaynhap.getText()+
+                            "', soluong='"+txtsoluong.getText()+
+                            "', dongia='"+txtdongia.getText()+
+                            "' where masp='"+txtmasp_kho.getText()+"'";
+                    st=conn.createStatement();
+                    int kq=st.executeUpdate(sql);
+                    if(kq>0){
+                        JOptionPane.showMessageDialog(this,"sua thanh cong");
+                        btnlammoikho.doClick();
+                    }else{
+                        JOptionPane.showMessageDialog(this,"that bai");
+                    }
+                }
+            }
+        }catch(Exception  ex){
+            System.out.println(ex.toString());
+        }
+    }//GEN-LAST:event_btnsuakhoActionPerformed
+     
+//    public List<home> timnhanvien(String name){
+//        ResultSet rs =null;
+//        Statement sttm=null;
+//        try{
+//            String sql="select*from NhanVien where manv like '"+name+"'";
+//            conn=DatabaseHelper.getDBConnect();
+//        }catch(){}
+//        
+//        
+//    }
+    private void btntimkiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntimkiemActionPerformed
+        
+       
+    }//GEN-LAST:event_btntimkiemActionPerformed
+
+    private void btnsuanvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsuanvActionPerformed
+        try{
+            if(txtmanv.getText().equals("")||txttennv.getText().equals("")||txtngaysinh.getText().equals("")||txtgioitinh.getSelectedItem().equals("")||txtsdt.getText().equals("")||txtquequan.getText().equals("")||txtluongcoban.getText().equals("")){
+                JOptionPane.showMessageDialog(this, "Ban can nhap du cac truong !!");
+            }else{
+                StringBuffer sb=new StringBuffer();
+                Statement st=conn.createStatement();
+                if(sb.length()>0){
+                    JOptionPane.showMessageDialog(this,sb.toString());
+                }else{
+                    String sql="update NhanVien set tennv='"+txttennv.getText()+
+                            "', ngaysinh='"+txtngaysinh.getText()+
+                            "', gioitinh='"+txtgioitinh.getSelectedItem()+
+                            "', sodt='"+txtsdt.getText()+
+                            "', quequan='"+txtquequan.getText()+
+                            "', luongcoban='"+txtluongcoban.getText()+
+                            "' where manv='"+txtmanv.getText()+"'";
+                    st=conn.createStatement();
+                    int kq=st.executeUpdate(sql);
+                    if(kq>0){
+                        JOptionPane.showMessageDialog(this,"sua thanh cong");
+                        btnlammoinv.doClick();
+                    }else{
+                        JOptionPane.showMessageDialog(this,"that bai");
+                    }
+                }
+            }
+        }catch(Exception  ex){
+            System.out.println(ex.toString());
+        }
+    }//GEN-LAST:event_btnsuanvActionPerformed
+    
+    
+    
+    public static void main(String args[]) {
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new home().setVisible(true);
@@ -1512,18 +1768,22 @@ public class home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btndangxuat;
+    private javax.swing.JButton btnlammoikho;
     private javax.swing.JButton btnlammoinv;
     private javax.swing.JButton btnlammoisp;
+    private javax.swing.JButton btnsuakho;
     private javax.swing.JButton btnsuanv;
     private javax.swing.JButton btnsuasp;
     private javax.swing.JButton btnthemanh;
     private javax.swing.JButton btnthemanhsp;
+    private javax.swing.JButton btnthemkho;
     private javax.swing.JButton btnthemnv;
     private javax.swing.JButton btnthemsp;
     private javax.swing.JButton btnthongke;
     private javax.swing.JButton btntimkiem;
     private javax.swing.JButton btntimkiemsp;
     private javax.swing.JButton btnxoa;
+    private javax.swing.JButton btnxoakho;
     private javax.swing.JButton btnxoanv;
     private javax.swing.JButton btnxoasp;
     private javax.swing.JButton btnxoatksp;
@@ -1535,10 +1795,6 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JTable dgvsp;
     private javax.swing.JTable dgvthongke;
     private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;

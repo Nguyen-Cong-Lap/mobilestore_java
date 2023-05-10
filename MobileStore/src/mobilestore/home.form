@@ -87,7 +87,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel1" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btndangxuat" min="-2" pref="103" max="-2" attributes="0"/>
+                      <Component id="btndangxuat" min="-2" pref="115" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -296,7 +296,7 @@
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
                                           <Component id="jLabel13" min="-2" pref="30" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                                           <Component id="btnthemanh" min="-2" pref="35" max="-2" attributes="0"/>
@@ -317,7 +317,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="M&#xe3; Nh&#xe2;n Vi&#xea;n"/>
+                    <Property name="text" type="java.lang.String" value="M&#xe3; Nh&#xe2;n Vi&#xea;n :"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtmanv">
@@ -330,7 +330,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="T&#xea;n Nh&#xe2;n Vi&#xea;n"/>
+                    <Property name="text" type="java.lang.String" value="T&#xea;n Nh&#xe2;n Vi&#xea;n :"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txttennv">
@@ -343,7 +343,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Gi&#x1edb;i T&#xed;nh"/>
+                    <Property name="text" type="java.lang.String" value="Gi&#x1edb;i T&#xed;nh :"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel10">
@@ -351,7 +351,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Ng&#xe0;y Sinh"/>
+                    <Property name="text" type="java.lang.String" value="Ng&#xe0;y Sinh :"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtngaysinh">
@@ -364,7 +364,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Qu&#xea; Qu&#xe1;n"/>
+                    <Property name="text" type="java.lang.String" value="Qu&#xea; Qu&#xe1;n :"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtquequan">
@@ -377,7 +377,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="S&#x1ed1; &#x110;i&#x1ec7;n Tho&#x1ea1;i"/>
+                    <Property name="text" type="java.lang.String" value="S&#x1ed1; &#x110;i&#x1ec7;n Tho&#x1ea1;i :"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtsdt">
@@ -478,6 +478,9 @@
                     <Property name="text" type="java.lang.String" value="T&#xec;m Ki&#x1ebf;m"/>
                     <Property name="name" type="java.lang.String" value="btnthemanh" noResource="true"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btntimkiemActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnthemnv">
                   <Properties>
@@ -545,7 +548,7 @@
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="115" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="120" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
@@ -573,7 +576,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="L&#x1b0;&#x1a1;ng C&#x1a1; B&#x1ea3;n"/>
+                    <Property name="text" type="java.lang.String" value="L&#x1b0;&#x1a1;ng C&#x1a1; B&#x1ea3;n :"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtluongcoban">
@@ -769,7 +772,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Gi&#xe1; B&#xe1;n"/>
+                        <Property name="text" type="java.lang.String" value="Gi&#xe1; B&#xe1;n :"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="txtgiaban">
@@ -785,13 +788,16 @@
                         <Property name="text" type="java.lang.String" value="Th&#xea;m TT"/>
                         <Property name="name" type="java.lang.String" value="btnthem" noResource="true"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnthemspActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel15">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Nh&#xe0; S&#x1ea3;n Xu&#x1ea5;t"/>
+                        <Property name="text" type="java.lang.String" value="Nh&#xe0; S&#x1ea3;n Xu&#x1ea5;t :"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JButton" name="btnxoasp">
@@ -802,6 +808,9 @@
                         <Property name="text" type="java.lang.String" value="X&#xf3;a TT"/>
                         <Property name="name" type="java.lang.String" value="btnxoa" noResource="true"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnxoaspActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JTextField" name="txtmasp">
                       <Properties>
@@ -821,6 +830,9 @@
                         <Property name="text" type="java.lang.String" value="S&#x1eed;a TT"/>
                         <Property name="name" type="java.lang.String" value="btnsua" noResource="true"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnsuaspActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JComboBox" name="cbbaohanh">
                       <Properties>
@@ -844,13 +856,16 @@
                         <Property name="text" type="java.lang.String" value="L&#xe0;m M&#x1edb;i"/>
                         <Property name="name" type="java.lang.String" value="btnlammoi" noResource="true"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnlammoispActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel16">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="T&#xea;n S&#x1ea3;n Ph&#x1ea9;m"/>
+                        <Property name="text" type="java.lang.String" value="T&#xea;n S&#x1ea3;n Ph&#x1ea9;m :"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel17">
@@ -946,7 +961,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="M&#xe3; S&#x1ea3;n Ph&#x1ea9;m"/>
+                        <Property name="text" type="java.lang.String" value="M&#xe3; S&#x1ea3;n Ph&#x1ea9;m  :"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel18">
@@ -954,7 +969,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="B&#x1ea3;o H&#xe0;nh"/>
+                        <Property name="text" type="java.lang.String" value="B&#x1ea3;o H&#xe0;nh :"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="jTextField11">
@@ -985,7 +1000,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Ng&#xe0;y S&#x1ea3;n Xu&#x1ea5;t"/>
+                        <Property name="text" type="java.lang.String" value="Ng&#xe0;y S&#x1ea3;n Xu&#x1ea5;t :"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="txtngaysx">
@@ -1082,13 +1097,13 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jButton16" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnthemkho" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton17" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnxoakho" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton18" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnsuakho" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton19" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnlammoikho" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="177" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -1142,10 +1157,10 @@
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jButton16" alignment="3" pref="30" max="32767" attributes="0"/>
-                                  <Component id="jButton17" alignment="3" pref="30" max="32767" attributes="0"/>
-                                  <Component id="jButton18" alignment="3" pref="30" max="32767" attributes="0"/>
-                                  <Component id="jButton19" alignment="3" max="32767" attributes="0"/>
+                                  <Component id="btnthemkho" alignment="3" pref="30" max="32767" attributes="0"/>
+                                  <Component id="btnxoakho" alignment="3" pref="30" max="32767" attributes="0"/>
+                                  <Component id="btnsuakho" alignment="3" pref="30" max="32767" attributes="0"/>
+                                  <Component id="btnlammoikho" alignment="3" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -1161,7 +1176,7 @@
                         <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="jButton16">
+                    <Component class="javax.swing.JButton" name="btnthemkho">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="1"/>
@@ -1169,16 +1184,19 @@
                         <Property name="text" type="java.lang.String" value="Th&#xea;m TT"/>
                         <Property name="name" type="java.lang.String" value="btnthem" noResource="true"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnthemkhoActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel21">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="&#x110;&#x1a1;n Gi&#xe1;"/>
+                        <Property name="text" type="java.lang.String" value="&#x110;&#x1a1;n Gi&#xe1; :"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="jButton17">
+                    <Component class="javax.swing.JButton" name="btnxoakho">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="1"/>
@@ -1186,6 +1204,9 @@
                         <Property name="text" type="java.lang.String" value="X&#xf3;a TT"/>
                         <Property name="name" type="java.lang.String" value="btnxoa" noResource="true"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnxoakhoActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JTextField" name="txtmasp_kho">
                       <Properties>
@@ -1197,7 +1218,7 @@
                         <Property name="name" type="java.lang.String" value="txtdongia" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="jButton18">
+                    <Component class="javax.swing.JButton" name="btnsuakho">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="1"/>
@@ -1205,8 +1226,11 @@
                         <Property name="text" type="java.lang.String" value="S&#x1eed;a TT"/>
                         <Property name="name" type="java.lang.String" value="btnsua" noResource="true"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnsuakhoActionPerformed"/>
+                      </Events>
                     </Component>
-                    <Component class="javax.swing.JButton" name="jButton19">
+                    <Component class="javax.swing.JButton" name="btnlammoikho">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="1"/>
@@ -1214,13 +1238,16 @@
                         <Property name="text" type="java.lang.String" value="L&#xe0;m M&#x1edb;i"/>
                         <Property name="name" type="java.lang.String" value="btnlammoi" noResource="true"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnlammoikhoActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel22">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Ng&#xe0;y Nh&#x1ead;p"/>
+                        <Property name="text" type="java.lang.String" value="Ng&#xe0;y Nh&#x1ead;p :"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel23">
@@ -1304,7 +1331,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="M&#xe3; S&#x1ea3;n Ph&#x1ea9;m"/>
+                        <Property name="text" type="java.lang.String" value="M&#xe3; S&#x1ea3;n Ph&#x1ea9;m :"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="jTextField17">
@@ -1334,7 +1361,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="S&#x1ed1; L&#x1b0;&#x1ee3;ng"/>
+                        <Property name="text" type="java.lang.String" value="S&#x1ed1; L&#x1b0;&#x1ee3;ng :"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="txtsoluong">

@@ -255,15 +255,13 @@ public class home extends javax.swing.JFrame {
         jPanel13 = new javax.swing.JPanel();
         jButton22 = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        dgvthongke = new javax.swing.JTable();
         jTextField20 = new javax.swing.JTextField();
         jButton23 = new javax.swing.JButton();
-        jButton28 = new javax.swing.JButton();
-        jTextField21 = new javax.swing.JTextField();
-        jButton29 = new javax.swing.JButton();
-        jMonthChooser1 = new com.toedter.calendar.JMonthChooser();
-        jButton30 = new javax.swing.JButton();
-        jTextField13 = new javax.swing.JTextField();
+        cbthongke = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        txtthongke = new javax.swing.JTextField();
+        btnthongke = new javax.swing.JButton();
         jPanel14 = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
         jTextField22 = new javax.swing.JTextField();
@@ -284,6 +282,7 @@ public class home extends javax.swing.JFrame {
         jTextField29 = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
         jTextField30 = new javax.swing.JTextField();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -601,6 +600,11 @@ public class home extends javax.swing.JFrame {
         btnlammoisp.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnlammoisp.setText("Làm Mới");
         btnlammoisp.setName("btnlammoi"); // NOI18N
+        btnlammoisp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnlammoispActionPerformed(evt);
+            }
+        });
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel16.setText("Tên Sản Phẩm");
@@ -981,21 +985,15 @@ public class home extends javax.swing.JFrame {
         jButton22.setText("Làm Mới");
         jButton22.setName("btnlammoi"); // NOI18N
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        dgvthongke.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Mã Nhân Viên", "Tên Nhân Viên", "Ngày Sinh", "Giới Tính", "Số Điện Thoại", "Quê Quán"
+
             }
         ));
-        jScrollPane4.setViewportView(jTable4);
-        if (jTable4.getColumnModel().getColumnCount() > 0) {
-            jTable4.getColumnModel().getColumn(2).setHeaderValue("Ngày Sinh");
-            jTable4.getColumnModel().getColumn(3).setHeaderValue("Giới Tính");
-            jTable4.getColumnModel().getColumn(4).setHeaderValue("Số Điện Thoại");
-            jTable4.getColumnModel().getColumn(5).setHeaderValue("Quê Quán");
-        }
+        jScrollPane4.setViewportView(dgvthongke);
 
         jTextField20.setName("txttimkiem"); // NOI18N
 
@@ -1003,54 +1001,50 @@ public class home extends javax.swing.JFrame {
         jButton23.setText("Tìm Kiếm");
         jButton23.setName("btntimkiem"); // NOI18N
 
-        jButton28.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton28.setText("TK theo Mã Sp");
-        jButton28.setName("btnthongkemasp"); // NOI18N
-        jButton28.setPreferredSize(new java.awt.Dimension(130, 30));
+        cbthongke.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Theo Tháng", "Theo Năm", "Theo Sản Phẩm" }));
 
-        jTextField21.setName("txtmasp"); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel7.setText("Thống kê theo");
+        jLabel7.setPreferredSize(new java.awt.Dimension(96, 30));
 
-        jButton29.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton29.setText("TK theo Tháng");
-        jButton29.setName("btnthongkethang"); // NOI18N
-        jButton29.setPreferredSize(new java.awt.Dimension(107, 30));
-
-        jMonthChooser1.setName("txtthang"); // NOI18N
-
-        jButton30.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton30.setText("TK theo Năm");
-        jButton30.setName("btnthongkenam"); // NOI18N
-        jButton30.setPreferredSize(new java.awt.Dimension(100, 30));
-
-        jTextField13.setName("txtnam"); // NOI18N
+        btnthongke.setText("Thống kê");
+        btnthongke.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnthongkeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGap(438, 438, 438)
+                        .addGap(444, 444, 444)
                         .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton23)
                         .addGap(37, 37, 37)
                         .addComponent(jButton22)
-                        .addGap(0, 145, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton28, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                            .addComponent(jButton29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jMonthChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField13, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                            .addComponent(jTextField21))
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane4)))
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addGap(48, 48, 48)
+                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel13Layout.createSequentialGroup()
+                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(cbthongke, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                                        .addComponent(txtthongke, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(33, 33, 33))))
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addGap(116, 116, 116)
+                                .addComponent(btnthongke)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel13Layout.setVerticalGroup(
@@ -1066,16 +1060,12 @@ public class home extends javax.swing.JFrame {
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel13Layout.createSequentialGroup()
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cbthongke, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jMonthChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField13))))
+                        .addComponent(txtthongke, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(btnthongke)))
                 .addContainerGap(48, Short.MAX_VALUE))
         );
 
@@ -1274,6 +1264,7 @@ public class home extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("QL Tài Khoản", jPanel16);
+        jTabbedPane1.addTab("Quản lý HĐ", jTabbedPane2);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -1311,10 +1302,6 @@ public class home extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField23ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField23ActionPerformed
-
     private void btndangxuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndangxuatActionPerformed
         int a= JOptionPane.showConfirmDialog(this, "Ban muon dang xuat?","chon",JOptionPane.YES_NO_OPTION);
         if(a==0){
@@ -1322,27 +1309,9 @@ public class home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btndangxuatActionPerformed
 
-    private void btnthemnvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnthemnvActionPerformed
-        try{
-            DefaultTableModel tbn=new DefaultTableModel();
-            PreparedStatement ps=conn.prepareStatement("insert into NhanVien values(?,?,?,?,?,?,?)");
-            ps.setString(1, txtmanv.getText());
-            ps.setString(2, txttennv.getText());
-            ps.setString(3, txtngaysinh.getText());
-            ps.setString(4, txtgioitinh.getSelectedItem().toString());
-            ps.setString(5, txtsdt.getText());
-            ps.setString(6, txtquequan.getText());
-            ps.setString(7, txtluongcoban.getText());
-            int chk=ps.executeUpdate();
-            if(chk>0){
-                JOptionPane.showMessageDialog(this, "them thanh cong");
-                tbn.setRowCount(0);
-                btnlammoinv.doClick();
-            }
-        }catch(Exception  ex){
-            System.out.println(ex.toString());
-        }
-    }//GEN-LAST:event_btnthemnvActionPerformed
+    private void jTextField23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField23ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField23ActionPerformed
 
     private void btnlammoinvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlammoinvActionPerformed
         txtmanv.setText(null);
@@ -1354,6 +1323,33 @@ public class home extends javax.swing.JFrame {
         txtluongcoban.setText(null);
         getData_NhanVien();
     }//GEN-LAST:event_btnlammoinvActionPerformed
+
+    private void btnsuanvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsuanvActionPerformed
+        try{
+            if(txtmanv.getText().equals("")||txttennv.getText().equals("")||txtngaysinh.getText().equals("")||txtgioitinh.getSelectedItem().equals("")||txtsdt.getText().equals("")||txtquequan.getText().equals("")||txtluongcoban.getText().equals("")){
+                JOptionPane.showMessageDialog(this, "Ban can nhap du cac truong !!");
+            }
+            else{
+            DefaultTableModel tbn=new DefaultTableModel();
+            PreparedStatement ps=conn.prepareStatement("update NhanVien set tennv=?, ngaysinh=?, gioitinh=?, sodt=?, quequan=?, luongcoban=? where manv=? ");
+            ps.setString(7, txtmanv.getText());
+            ps.setString(1, txttennv.getText());
+            ps.setString(2, txtngaysinh.getText());
+            ps.setString(3, txtgioitinh.getSelectedItem().toString());
+            ps.setString(4, txtsdt.getText());
+            ps.setString(5, txtquequan.getText());
+            ps.setString(6, txtluongcoban.getText());
+            int chk=ps.executeUpdate();
+            if(chk>0){
+                JOptionPane.showMessageDialog(this, "sua thanh cong");
+                tbn.setRowCount(0);
+                btnlammoinv.doClick();
+            }
+            }
+        }catch(Exception  ex){
+            System.out.println(ex.toString());
+        }
+    }//GEN-LAST:event_btnsuanvActionPerformed
 
     private void btnxoanvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnxoanvActionPerformed
         try{
@@ -1371,27 +1367,113 @@ public class home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnxoanvActionPerformed
 
-    private void btnsuanvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsuanvActionPerformed
+    private void btnthemnvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnthemnvActionPerformed
         try{
+            if(txtmanv.getText().equals("")||txttennv.getText().equals("")||txtngaysinh.getText().equals("")||txtgioitinh.getSelectedItem().equals("")||txtsdt.getText().equals("")||txtquequan.getText().equals("")||txtluongcoban.getText().equals("")){
+                JOptionPane.showMessageDialog(this, "Ban can nhap du cac truong !!");
+            }
+            else{
             DefaultTableModel tbn=new DefaultTableModel();
-            PreparedStatement ps=conn.prepareStatement("update NhanVien set tennv=?, ngaysinh=?, gioitinh=?, sodt=?, quequan=?, luongcoban=? where manv=? ");
-            ps.setString(7, txtmanv.getText());
-            ps.setString(1, txttennv.getText());
-            ps.setString(2, txtngaysinh.getText());
-            ps.setString(3, txtgioitinh.getSelectedItem().toString());
-            ps.setString(4, txtsdt.getText());
-            ps.setString(5, txtquequan.getText());
-            ps.setString(6, txtluongcoban.getText());
+            PreparedStatement ps=conn.prepareStatement("insert into NhanVien values(?,?,?,?,?,?,?)");
+            ps.setString(1, txtmanv.getText());
+            ps.setString(2, txttennv.getText());
+            ps.setString(3, txtngaysinh.getText());
+            ps.setString(4, txtgioitinh.getSelectedItem().toString());
+            ps.setString(5, txtsdt.getText());
+            ps.setString(6, txtquequan.getText());
+            ps.setString(7, txtluongcoban.getText());
             int chk=ps.executeUpdate();
             if(chk>0){
-                JOptionPane.showMessageDialog(this, "sua thanh cong");
+                JOptionPane.showMessageDialog(this, "them thanh cong");
                 tbn.setRowCount(0);
                 btnlammoinv.doClick();
+            }
             }
         }catch(Exception  ex){
             System.out.println(ex.toString());
         }
-    }//GEN-LAST:event_btnsuanvActionPerformed
+    }//GEN-LAST:event_btnthemnvActionPerformed
+
+    private void btnthongkeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnthongkeActionPerformed
+        try {
+            if(cbthongke.getSelectedItem()=="Theo Tháng"){
+            DefaultTableModel tbn=new DefaultTableModel();
+            int number;
+            Vector row,column;
+            column = new Vector();
+            Statement st = conn.createStatement();
+            ResultSet rs= st.executeQuery("select * from HoaDon1 where month(ngayxuat)='"+txtthongke.getText()+"'");
+            ResultSetMetaData metadata = rs.getMetaData();
+            number= metadata.getColumnCount(); 
+            
+            for(int i =1;i<=number;i++){
+                column.add(metadata.getColumnName(i));
+            }
+            tbn.setColumnIdentifiers(column);
+            while(rs.next()){
+                row = new Vector();
+                for(int i=1;i<=number;i++){
+                    row.addElement(rs.getString(i));
+                }
+                tbn.addRow(row);
+                dgvthongke.setModel(tbn);
+            }
+            }
+            if(cbthongke.getSelectedItem()=="Theo Năm"){
+            DefaultTableModel tbn=new DefaultTableModel();
+            int number;
+            Vector row,column;
+            column = new Vector();
+            Statement st = conn.createStatement();
+            ResultSet rs= st.executeQuery("select * from HoaDon1 where year(ngayxuat)='"+txtthongke.getText()+"'");
+            ResultSetMetaData metadata = rs.getMetaData();
+            number= metadata.getColumnCount(); 
+            
+            for(int i =1;i<=number;i++){
+                column.add(metadata.getColumnName(i));
+            }
+            tbn.setColumnIdentifiers(column);
+            while(rs.next()){
+                row = new Vector();
+                for(int i=1;i<=number;i++){
+                    row.addElement(rs.getString(i));
+                }
+                tbn.addRow(row);
+                dgvthongke.setModel(tbn);
+            }
+        }
+        if(cbthongke.getSelectedItem()=="Theo Sản Phẩm"){
+            DefaultTableModel tbn=new DefaultTableModel();
+            int number;
+            Vector row,column;
+            column = new Vector();
+            Statement st = conn.createStatement();
+            ResultSet rs= st.executeQuery("select * from HoaDon1 where masp='"+txtthongke.getText()+"'");
+            ResultSetMetaData metadata = rs.getMetaData();
+            number= metadata.getColumnCount(); 
+            
+            for(int i =1;i<=number;i++){
+                column.add(metadata.getColumnName(i));
+            }
+            tbn.setColumnIdentifiers(column);
+            while(rs.next()){
+                row = new Vector();
+                for(int i=1;i<=number;i++){
+                    row.addElement(rs.getString(i));
+                }
+                tbn.addRow(row);
+                dgvthongke.setModel(tbn);
+            }
+        }
+        }
+        catch(Exception  ex){
+            System.out.println(ex.toString());
+        }
+    }//GEN-LAST:event_btnthongkeActionPerformed
+
+    private void btnlammoispActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlammoispActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnlammoispActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1438,6 +1520,7 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JButton btnthemanhsp;
     private javax.swing.JButton btnthemnv;
     private javax.swing.JButton btnthemsp;
+    private javax.swing.JButton btnthongke;
     private javax.swing.JButton btntimkiem;
     private javax.swing.JButton btntimkiemsp;
     private javax.swing.JButton btnxoa;
@@ -1445,10 +1528,12 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JButton btnxoasp;
     private javax.swing.JButton btnxoatksp;
     private javax.swing.JComboBox<String> cbbaohanh;
+    private javax.swing.JComboBox<String> cbthongke;
     private javax.swing.JTable dgvLuong;
     private javax.swing.JTable dgvkho;
     private javax.swing.JTable dgvnhanvien;
     private javax.swing.JTable dgvsp;
+    private javax.swing.JTable dgvthongke;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
@@ -1458,9 +1543,6 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton28;
-    private javax.swing.JButton jButton29;
-    private javax.swing.JButton jButton30;
     private javax.swing.JButton jButton31;
     private javax.swing.JButton jButton32;
     private javax.swing.JButton jButton35;
@@ -1487,9 +1569,9 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private com.toedter.calendar.JMonthChooser jMonthChooser1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -1513,13 +1595,11 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable4;
+    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTable jTable6;
     private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField21;
     private javax.swing.JTextField jTextField22;
     private javax.swing.JTextField jTextField23;
     private javax.swing.JTextField jTextField28;
@@ -1541,6 +1621,7 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JTextField txtsoluong;
     private javax.swing.JTextField txttennv;
     private javax.swing.JTextField txttensp;
+    private javax.swing.JTextField txtthongke;
     private javax.swing.JTextField txttimkiem;
     // End of variables declaration//GEN-END:variables
 }

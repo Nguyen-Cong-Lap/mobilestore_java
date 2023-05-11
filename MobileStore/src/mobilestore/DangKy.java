@@ -24,9 +24,9 @@ public class DangKy extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txttaikhoandk = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        txtmatkhaudn = new javax.swing.JTextField();
         btndangky = new javax.swing.JButton();
         btnquaylai = new javax.swing.JButton();
+        txtmatkhaudk = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -89,7 +89,7 @@ public class DangKy extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(txtmatkhaudn, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtmatkhaudk))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -109,14 +109,14 @@ public class DangKy extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txttaikhoandk, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtmatkhaudn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                    .addComponent(txtmatkhaudk))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btndangky, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnquaylai))
-                .addGap(0, 60, Short.MAX_VALUE))
+                .addGap(0, 61, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -136,7 +136,7 @@ public class DangKy extends javax.swing.JFrame {
     
     private void btndangkyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndangkyActionPerformed
         try{
-            if(txttaikhoandk.getText().equals("")||txtmatkhaudn.getText().equals("")){
+            if(txttaikhoandk.getText().equals("")||txtmatkhaudk.getText().equals("")){
                 JOptionPane.showMessageDialog(this, "Ban can nhap du cac truong !!");
             }
             else{
@@ -150,7 +150,7 @@ public class DangKy extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this,sb.toString());
                 }else{
                     String sql="insert into NguoiDung values('"+txttaikhoandk.getText()+
-                        "','"+txtmatkhaudn.getText()+"')";
+                        "','"+txtmatkhaudk.getText()+"')";
                     st=conn.createStatement();
                     int kq=st.executeUpdate(sql);
                     if(kq>0){
@@ -214,7 +214,7 @@ public class DangKy extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField txtmatkhaudn;
+    private javax.swing.JPasswordField txtmatkhaudk;
     private javax.swing.JTextField txttaikhoandk;
     // End of variables declaration//GEN-END:variables
 }

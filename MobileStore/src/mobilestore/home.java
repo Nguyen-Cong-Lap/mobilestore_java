@@ -294,9 +294,9 @@ public class home extends javax.swing.JFrame {
         btncapnhatTK = new javax.swing.JButton();
         txtmkcu = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
-        txtmkmoi = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
-        txtnhaplaimk = new javax.swing.JTextField();
+        txtmkmoi = new javax.swing.JPasswordField();
+        txtnhaplaimk = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -1179,6 +1179,11 @@ public class home extends javax.swing.JFrame {
         jButton31.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton31.setText("Tìm Kiếm");
         jButton31.setName("btntimkiem"); // NOI18N
+        jButton31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton31ActionPerformed(evt);
+            }
+        });
 
         dgvLuong.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1327,7 +1332,7 @@ public class home extends javax.swing.JFrame {
         jScrollPane6.setViewportView(dgvtaikhoan);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel6.setText("Mật Khẩu Cũ");
+        jLabel6.setText("Mật Khẩu Cũ :");
 
         btncapnhatTK.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btncapnhatTK.setText("Cập Nhật");
@@ -1341,14 +1346,10 @@ public class home extends javax.swing.JFrame {
         txtmkcu.setName("txtmkcu"); // NOI18N
 
         jLabel28.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel28.setText("Mật Khẩu Mới");
-
-        txtmkmoi.setName("txtmkmoi"); // NOI18N
+        jLabel28.setText("Mật Khẩu Mới :");
 
         jLabel31.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel31.setText("Nhập Lại Mật Khẩu");
-
-        txtnhaplaimk.setName("txtnhaplaimk"); // NOI18N
+        jLabel31.setText("Nhập Lại Mật Khẩu :");
 
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
         jPanel20.setLayout(jPanel20Layout);
@@ -1361,14 +1362,14 @@ public class home extends javax.swing.JFrame {
                     .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(28, 28, 28)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtmkcu, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtmkmoi, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtnhaplaimk, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btncapnhatTK))
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtmkcu, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                    .addComponent(btncapnhatTK)
+                    .addComponent(txtmkmoi)
+                    .addComponent(txtnhaplaimk))
                 .addGap(26, 26, 26)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 565, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
         jPanel20Layout.setVerticalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1382,12 +1383,12 @@ public class home extends javax.swing.JFrame {
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtmkmoi)
-                            .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                            .addComponent(txtmkmoi))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtnhaplaimk)
-                            .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                            .addComponent(txtnhaplaimk))
                         .addGap(32, 32, 32)
                         .addComponent(btncapnhatTK, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(108, Short.MAX_VALUE))
@@ -2008,7 +2009,7 @@ public class home extends javax.swing.JFrame {
                 Vector row,column;
                 column = new Vector();
                 Statement st = conn.createStatement();
-                ResultSet rs= st.executeQuery("select  HoaDon1.*,HoaDon1.soluong*HoaDon1.dongia as TongThanhToan,(HoaDon1.soluong*HoaDon1.dongia)-(HoaDon1.soluong*Kho.dongia) as TienLai from HoaDon1,Kho where Kho.masp=HoaDon1.masp and month(ngayxuat)='"+txtthongke.getText()+"'");
+                ResultSet rs= st.executeQuery("select  HoaDon1.*,HoaDon1.soluong*HoaDon1.tongtien as TongThanhToan,(HoaDon1.soluong*HoaDon1.tongtien)-(HoaDon1.soluong*Kho.dongia) as TienLai from HoaDon1,Kho where Kho.masp=HoaDon1.masp and month(ngayxuat)='"+txtthongke.getText()+"'");
                 ResultSetMetaData metadata = rs.getMetaData();
                 number= metadata.getColumnCount();
 
@@ -2079,6 +2080,10 @@ public class home extends javax.swing.JFrame {
             System.out.println(ex.toString());
         }
     }//GEN-LAST:event_btnthongkeActionPerformed
+
+    private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton31ActionPerformed
     
     
     
@@ -2193,11 +2198,11 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JTextField txtmasp;
     private javax.swing.JTextField txtmasp_kho;
     private javax.swing.JTextField txtmkcu;
-    private javax.swing.JTextField txtmkmoi;
+    private javax.swing.JPasswordField txtmkmoi;
     private javax.swing.JTextField txtngaynhap;
     private javax.swing.JTextField txtngaysinh;
     private javax.swing.JTextField txtngaysx;
-    private javax.swing.JTextField txtnhaplaimk;
+    private javax.swing.JPasswordField txtnhaplaimk;
     private javax.swing.JTextField txtnhasx;
     private javax.swing.JTextField txtquequan;
     private javax.swing.JTextField txtsdt;
